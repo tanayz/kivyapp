@@ -11,8 +11,8 @@ Builder.load_string('''
         	img3:img3
         	img4:img4
         	lab:lab
-    	do_default_tab:False
-         ScreenManager:
+          do_default_tab:False
+          ScreenManager:
              id:manager
              Screen:
                  id:sc1
@@ -25,7 +25,7 @@ Builder.load_string('''
                          pos:self.pos
                          size:self.size
                   on_selection:root.select_to(*args)
-            Screen:
+             Screen:
                  id:sc2
                  name:'Image'
                  Floatlayout:
@@ -37,16 +37,16 @@ Builder.load_string('''
                  	Image:
                  	   id:img
                       on_touch_down:str('Relative:{}'.format(args[1].pos))
-                      pos_hint:{"left":1,'bottom':1
+                      pos_hint:{"left":1,'bottom':1}
                       size_hint:0.5,1
                       allow_stretch:True
                  RelativeLayout:
                  	Image:
                  	   id:img3
-                      pos_hint:{"right":1,'bottom':1
+                      pos_hint:{"right":1,'bottom':1}
                       size_hint:0.5,1
                       allow_stretch:True
-            }
+            
 	''')
 
 class RootWidget(TabbedPanel):

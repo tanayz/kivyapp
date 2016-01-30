@@ -11,7 +11,6 @@ Builder.load_string('''
     manager:manager
     img:img
     img3:img3
-    img4:img4
     lab:lab
     do_default_tab:False
     ScreenManager:
@@ -30,7 +29,7 @@ Builder.load_string('''
         Screen:
             id:sc2
             name:'Image'
-            Floatlayout:
+            FloatLayout:
                 Button:
                     id:lab
                     pos_hint:{'right':0.55,'top':1}
@@ -41,18 +40,18 @@ Builder.load_string('''
                     on_touch_down:str('Relative:{}'.format(args[1].pos))
                     pos_hint:{"left":1,'bottom':1}
                     size_hint:0.5,1
-                    allow_stretch:True
-                  
+                    allow_stretch:True                  
             RelativeLayout:
                 Image:
                     id:img3
                     pos_hint:{"right":1,'bottom':1}
                     size_hint:0.5,1
                     allow_stretch:True
+
             
     ''')
 
-class RootWidget(FloatLayout):
+class RootWidget(TabbedPanel):
     manager = ObjectProperty(None)
     def on_touch_up(self,touch):
         if not self.img3.collide_point(*touch.pos):

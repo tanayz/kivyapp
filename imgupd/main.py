@@ -1,10 +1,11 @@
 from kivy.app import App
 from kivy.uix.tabbedpanel import TabbedPanel
-from kivy.uix.floatlayout import FloatLayout
+#from kivy.uix.floatlayout import FloatLayout
 #from kivy.uix.relativelayout import RelativeLayout
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 from PIL import Image
+#from kivy.uix.screenmanager import ScreenManager, Screen
 
 Builder.load_string('''
 <RootWidget>:
@@ -69,12 +70,12 @@ class RootWidget(TabbedPanel):
         try:
             print args[1][0]
             iw = Image.open(args[1][0])
-            iw.save('./phase.jpg')
+            iw.save('Yellow_Rose.jpg')
             gray = iw.convert('1')
-            gray.save('./Yellow_Rose.jpg')
-            self.img3.source = './Yellow_Rose.jpg'
-            self.img4.source = './Yellow_Rose.jpg'
-            self.img.source = './phase.jpg'
+            gray.save('Yellow_Rose.jpg')
+            self.img3.source = 'Yellow_Rose.jpg'
+            self.img4.source = 'Yellow_Rose.jpg'
+            self.img.source = 'Yellow_Rose.jpg'
             self.img.reload()
             self.img3.reload()
             self.img4.reload()

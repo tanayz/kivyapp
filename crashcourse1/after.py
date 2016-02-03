@@ -1,5 +1,3 @@
-
-
 from kivy.app import App
 
 from kivy.uix.scatter import Scatter
@@ -9,8 +7,6 @@ from kivy.uix.button import Button
 from kivy.uix.filechooser import FileChooserIconView
 
 class TutorialApp(App):
-
-
     
     def build(self):
         f = FloatLayout()
@@ -32,9 +28,10 @@ class TutorialApp(App):
         
         def callback(instance):
             print('The button <%s> is being pressed' % instance.text)
-            fi.bind(on_selection=select_to)
+            
             f.add_widget(fi)
         b.bind(on_press=callback)
+        fi.bind(on_selection=select_to)
         return f
 
 if __name__ == "__main__":
